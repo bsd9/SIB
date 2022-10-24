@@ -59,10 +59,10 @@ export const BooksList = () => {
     return (
         <>
             <div className={`${classes.pageHeader} ${classes.mb2}`}>
-                <Typography variant="h5">Book List</Typography>
+                <Typography variant="h5">Lista de libros</Typography>
                 {isAdmin && (
                     <Button variant="contained" color="primary" component={RouterLink} to="/admin/books/add">
-                        Add Book
+                        Añadir libro
                     </Button>
                 )}
             </div>
@@ -73,13 +73,13 @@ export const BooksList = () => {
                             <Table stickyHeader>
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Name</TableCell>
+                                        <TableCell>Nombre</TableCell>
                                         <TableCell align="right">ISBN</TableCell>
-                                        <TableCell>Category</TableCell>
-                                        <TableCell align="right">Quantity</TableCell>
-                                        <TableCell align="right">Available</TableCell>
-                                        <TableCell align="right">Price</TableCell>
-                                        <TableCell>Action</TableCell>
+                                        <TableCell>Categoria</TableCell>
+                                        <TableCell align="right">Cantidad</TableCell>
+                                        <TableCell align="right">Disponibilidad</TableCell>
+                                        <TableCell align="right">Precio</TableCell>
+                                        <TableCell>Accion</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -104,7 +104,7 @@ export const BooksList = () => {
                                                         size="small"
                                                         to={`/books/${book.isbn}`}
                                                     >
-                                                        View
+                                                        Ver
                                                     </Button>
                                                     {isAdmin && (
                                                         <>
@@ -115,7 +115,7 @@ export const BooksList = () => {
                                                                 size="small"
                                                                 to={`/admin/books/${book.isbn}/edit`}
                                                             >
-                                                                Edit
+                                                                Editar
                                                             </Button>
                                                             <Button
                                                                 variant="contained"
@@ -126,7 +126,7 @@ export const BooksList = () => {
                                                                     setOpenModal(true)
                                                                 }}
                                                             >
-                                                                Delete
+                                                                Eliminar
                                                             </Button>
                                                         </>
                                                     )}
@@ -151,14 +151,14 @@ export const BooksList = () => {
                         <Modal open={openModal} onClose={(e) => setOpenModal(false)}>
                             <Card className={classes.conf_modal}>
                                 <CardContent>
-                                    <h2>Are you sure?</h2>
+                                    <h2>Esta seguro?</h2>
                                 </CardContent>
                                 <CardActions className={classes.conf_modal_actions}>
                                     <Button variant="contained" onClick={() => setOpenModal(false)}>
-                                        Cancel
+                                        Cancelar
                                     </Button>
                                     <Button variant="contained" color="secondary" onClick={deleteBook}>
-                                        Delete
+                                        Eliminar
                                     </Button>
                                 </CardActions>
                             </Card>
@@ -166,14 +166,14 @@ export const BooksList = () => {
                     </div>
                 </>
             ) : (
-                <Typography variant="h5">No books found!</Typography>
+                <Typography variant="h5">No hay libros!</Typography>
             )}
 
             {
                 user && !isAdmin && (
                     <>
                         <div className={`${classes.pageHeader} ${classes.mb2}`}>
-                            <Typography variant="h5">Borrowed Books</Typography>
+                            <Typography variant="h5">Libros prestados</Typography>
                         </div>
                         {borrowedBook.length > 0 ? (
                             <>
@@ -182,10 +182,10 @@ export const BooksList = () => {
                                         <Table stickyHeader>
                                             <TableHead>
                                                 <TableRow>
-                                                    <TableCell>Name</TableCell>
+                                                    <TableCell>Nombre</TableCell>
                                                     <TableCell align="right">ISBN</TableCell>
-                                                    <TableCell>Category</TableCell>
-                                                    <TableCell align="right">Price</TableCell>
+                                                    <TableCell>Categoria</TableCell>
+                                                    <TableCell align="right">Precio</TableCell>
                                                     <TableCell></TableCell>
                                                 </TableRow>
                                             </TableHead>
@@ -218,7 +218,7 @@ export const BooksList = () => {
                                 </div>
                             </>
                         ) : (
-                            <Typography variant="h5">No books issued!</Typography>
+                            <Typography variant="h5">¡No hay libros publicados!</Typography>
                         )}
                     </>
                 )
