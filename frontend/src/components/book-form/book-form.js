@@ -153,22 +153,23 @@ export const BookForm = () => {
                         <FormControl className={classes.mb2}>
                             <InputLabel>Category</InputLabel>
                             <Select name="category" value={book.category} onChange={updateBookField} required>
-                                <MenuItem value="Sci-Fi">Sci-Fi</MenuItem>
-                                <MenuItem value="Action">Action</MenuItem>
-                                <MenuItem value="Adventure">Adventure</MenuItem>
+                                <MenuItem value="Sci-Fi">Ciencia ficción</MenuItem>
+                                <MenuItem value="Action">Accion</MenuItem>
+                                <MenuItem value="Adventure">Aventura</MenuItem>
                                 <MenuItem value="Horror">Horror</MenuItem>
                                 <MenuItem value="Romance">Romance</MenuItem>
-                                <MenuItem value="Mystery">Mystery</MenuItem>
-                                <MenuItem value="Thriller">Thriller</MenuItem>
+                                <MenuItem value="Mystery">Misterio</MenuItem>
+                                <MenuItem value="Thriller">Suspenso</MenuItem>
                                 <MenuItem value="Drama">Drama</MenuItem>
-                                <MenuItem value="Fantasy">Fantasy</MenuItem>
-                                <MenuItem value="Comedy">Comedy</MenuItem>
-                                <MenuItem value="Biography">Biography</MenuItem>
-                                <MenuItem value="History">History</MenuItem>
-                                <MenuItem value="Western">Western</MenuItem>
-                                <MenuItem value="Literature">Literature</MenuItem>
-                                <MenuItem value="Poetry">Poetry</MenuItem>
-                                <MenuItem value="Philosophy">Philosophy</MenuItem>
+                                <MenuItem value="Fantasy">Fantasia</MenuItem>
+                                <MenuItem value="Comedy">Comedia</MenuItem>
+                                <MenuItem value="Biography">Biografia</MenuItem>
+                                <MenuItem value="History">Historia</MenuItem>
+                                <MenuItem value="Western">Occidental</MenuItem>
+                                <MenuItem value="Literature">Literatura</MenuItem>
+                                <MenuItem value="Poetry">Poesía</MenuItem>
+                                <MenuItem value="Philosophy">Filosofía</MenuItem>
+                                <MenuItem value="Autoayuda">Autoayuda</MenuItem>
                             </Select>
                         </FormControl>
                         <FormControl className={classes.mb2}>
