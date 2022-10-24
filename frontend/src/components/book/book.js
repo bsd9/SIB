@@ -80,7 +80,7 @@ export const Book = () => {
         book && (
             <div className={classes.wrapper}>
                 <Typography variant="h5" align="center" style={{ marginBottom: 20 }}>
-                    Book Details
+                    Detalles del libro
                 </Typography>
                 <Card>
                     <Tabs
@@ -111,7 +111,7 @@ export const Book = () => {
                                 <TableBody>
                                     <TableRow>
                                         <TableCell variant="head" component="th" width="200">
-                                            Name
+                                            Nombre
                                         </TableCell>
                                         <TableCell>{book.name}</TableCell>
                                     </TableRow>
@@ -123,25 +123,25 @@ export const Book = () => {
                                     </TableRow>
                                     <TableRow>
                                         <TableCell variant="head" component="th">
-                                            Category
+                                            Categoria
                                         </TableCell>
                                         <TableCell>{book.category}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell variant="head" component="th">
-                                            Quantity
+                                            Cantidad
                                         </TableCell>
                                         <TableCell>{book.quantity}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell variant="head" component="th">
-                                            Available
+                                            Disponibilidad
                                         </TableCell>
                                         <TableCell>{book.availableQuantity}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell variant="head" component="th">
-                                            Price
+                                            Precio
                                         </TableCell>
                                         <TableCell>${book.price}</TableCell>
                                     </TableRow>
@@ -155,7 +155,7 @@ export const Book = () => {
                             {book && book.priceHistory.length > 0 ? (
                                 <HighchartsReact highcharts={Highcharts} options={chartOptions} />
                             ) : (
-                                <h3>No history found!</h3>
+                                <h3>No se ha encontrado ningún historial!</h3>
                             )}
                         </CardContent>
                     </TabPanel>
@@ -165,7 +165,7 @@ export const Book = () => {
                             {book && book.quantityHistory.length > 0 ? (
                                 <HighchartsReact highcharts={Highcharts} options={chartOptions} />
                             ) : (
-                                <h3>No history found!</h3>
+                                <h3>No se ha encontrado ningún historial!</h3>
                             )}
                         </CardContent>
                     </TabPanel>
@@ -179,7 +179,7 @@ export const Book = () => {
                                     component={RouterLink}
                                     to={`/admin/books/${bookIsbn}/edit`}
                                 >
-                                    Edit Book
+                                    Editar libro
                                 </Button>
                             ) : (
                                 <>
@@ -188,19 +188,19 @@ export const Book = () => {
                                         onClick={borrowBook}
                                         disabled={book && user && book.borrowedBy.includes(user._id)}
                                     >
-                                        Borrow
+                                        Prestar
                                     </Button>
                                     <Button
                                         variant="contained"
                                         onClick={returnBook}
                                         disabled={book && user && !book.borrowedBy.includes(user._id)}
                                     >
-                                        Return
+                                        Devolver
                                     </Button>
                                 </>
                             )}
                             <Button type="submit" variant="text" color="primary" onClick={() => navigate(-1)}>
-                                Go Back
+                                Volver
                             </Button>
                         </div>
                     </CardActions>

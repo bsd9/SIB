@@ -122,7 +122,7 @@ export const BookForm = () => {
         <>
             <Container component={Paper} className={classes.wrapper}>
                 <Typography className={classes.pageHeader} variant="h5">
-                    {bookIsbn ? "Update Book" : "Add Book"}
+                    {bookIsbn ? "Actualizar libro" : "Añadir libro"}
                 </Typography>
                 <form noValidate autoComplete="off" onSubmit={formSubmit}>
                     <FormGroup>
@@ -208,7 +208,7 @@ export const BookForm = () => {
                             Cancel
                         </Button>
                         <Button type="submit" variant="contained" color="primary" disabled={isInvalid}>
-                            {bookIsbn ? "Update Book" : "Add Book"}
+                            {bookIsbn ? "Actualizar libro" : "Añadir libro"}
                         </Button>
                     </div>
                 </form>

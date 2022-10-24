@@ -19,6 +19,7 @@ import {
 import { BackendApi } from "../../client/backend-api"
 import { useUser } from "../../context/user-context"
 import classes from "./styles.module.css"
+import booksJson from "../../client/backend-api/books.json"
 
 export const BooksList = () => {
 
@@ -32,12 +33,13 @@ export const BooksList = () => {
 
 
     const fetchBooks = async () => {
-        const { books } = await BackendApi.book.getAllBooks()
-        setBooks(books)
+        //const { books } = await BackendApi.book.getAllBooks()
+        setBooks(booksJson)
     }
 
     const fetchUserBook = async () => {
         const { books } = await BackendApi.user.getBorrowBook()
+        console.log(books)
         setBorrowedBook(books)
     }
 
@@ -78,8 +80,7 @@ export const BooksList = () => {
                                         <TableCell>Categoria</TableCell>
                                         <TableCell align="right">Cantidad</TableCell>
                                         <TableCell align="right">Disponibilidad</TableCell>
-                                        <TableCell align="right">Precio</TableCell>
-                                        <TableCell>Accion</TableCell>
+                                        <TableCell align="center">Accion</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -95,8 +96,7 @@ export const BooksList = () => {
                                             <TableCell>{book.category}</TableCell>
                                             <TableCell align="right">{book.quantity}</TableCell>
                                             <TableCell align="right">{book.availableQuantity}</TableCell>
-                                            <TableCell align="right">{`$${book.price}`}</TableCell>
-                                            <TableCell>
+                                            <TableCell align="rigth">
                                                 <div className={classes.actionsContainer}>
                                                     <Button
                                                         variant="contained"
@@ -218,7 +218,7 @@ export const BooksList = () => {
                                 </div>
                             </>
                         ) : (
-                            <Typography variant="h5">¡No hay libros publicados!</Typography>
+                            <Typography variant="h5">¡No hay libros prestados!</Typography>
                         )}
                     </>
                 )

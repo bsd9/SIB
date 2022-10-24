@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "6356019eb7a5e7b3561e5e5e"
+  },
+  "name": "100 años de soledad",
+  "isbn": "9999",
+  "category": "Fantasy",
+  "price": 100000,
+  "quantity": 10,
+  "borrowedBy": [
+    {
+      "$oid": "6355f9a698120983ac274232"
+    },
+    {
+      "$oid": "63560012585955dbf974579c"
+    }
+  ],
+  "priceHistory": [
+    {
+      "price": "100000",
+      "modifiedAt": "2022-10-24T03:08:14Z"
+    }
+  ],
+  "quantityHistory": [
+    {
+      "quantity": "10",
+      "modifiedAt": "2022-10-24T03:08:14Z"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6356c80a2bd976503abdb9b4"
+  },
+  "name": "12 reglas para vivir",
+  "isbn": "88888",
+  "category": "Philosophy",
+  "price": 89000,
+  "quantity": 15,
+  "borrowedBy": [],
+  "priceHistory": [
+    {
+      "price": "89000",
+      "modifiedAt": "2022-10-24T17:14:50Z"
+    }
+  ],
+  "quantityHistory": [
+    {
+      "quantity": "15",
+      "modifiedAt": "2022-10-24T17:14:50Z"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6356c8612bd976503abdb9bb"
+  },
+  "name": "Así habló Zaratustra",
+  "isbn": "77777",
+  "category": "Philosophy",
+  "price": 20000,
+  "quantity": 60,
+  "borrowedBy": [],
+  "priceHistory": [
+    {
+      "price": "20000",
+      "modifiedAt": "2022-10-24T17:16:17Z"
+    }
+  ],
+  "quantityHistory": [
+    {
+      "quantity": "60",
+      "modifiedAt": "2022-10-24T17:16:17Z"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6356c88f2bd976503abdb9c2"
+  },
+  "name": "1984",
+  "isbn": "66666",
+  "category": "Sci-Fi",
+  "price": 54000,
+  "quantity": 2,
+  "borrowedBy": [],
+  "priceHistory": [
+    {
+      "price": "54000",
+      "modifiedAt": "2022-10-24T17:17:02Z"
+    }
+  ],
+  "quantityHistory": [
+    {
+      "quantity": "2",
+      "modifiedAt": "2022-10-24T17:17:02Z"
+    }
+  ]
+}]
