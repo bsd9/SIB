@@ -34,6 +34,7 @@ export const BooksList = () => {
 
     const fetchBooks = async () => {
         //const { books } = await BackendApi.book.getAllBooks()
+        console.log(booksJson)
         setBooks(booksJson)
     }
 
@@ -79,8 +80,8 @@ export const BooksList = () => {
                                         <TableCell align="right">ISBN</TableCell>
                                         <TableCell>Categoria</TableCell>
                                         <TableCell align="right">Cantidad</TableCell>
-                                        <TableCell align="right">Disponibilidad</TableCell>
-                                        <TableCell align="center">Accion</TableCell>
+                                        <TableCell align="center">Disponibilidad</TableCell>
+                                        <TableCell align="left">Accion</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -88,6 +89,7 @@ export const BooksList = () => {
                                         ? books.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                         : books
                                     ).map((book) => (
+                                        
                                         <TableRow key={book.isbn}>
                                             <TableCell component="th" scope="row">
                                                 {book.name}
@@ -95,7 +97,7 @@ export const BooksList = () => {
                                             <TableCell align="right">{book.isbn}</TableCell>
                                             <TableCell>{book.category}</TableCell>
                                             <TableCell align="right">{book.quantity}</TableCell>
-                                            <TableCell align="right">{book.availableQuantity}</TableCell>
+                                            <TableCell align="center">13</TableCell>
                                             <TableCell align="rigth">
                                                 <div className={classes.actionsContainer}>
                                                     <Button
