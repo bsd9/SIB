@@ -164,14 +164,15 @@ export const BooksList = () => {
                     </div>
                 </>
             ) : (
-                <Typography variant="h5">No books found!</Typography>
+                <Typography variant="h5">No se encontraron libros</Typography>
             )}
 
             {
                 user && !isAdmin && (
                     <>
+                    <br></br>
                         <div className={`${classes.pageHeader} ${classes.mb2}`}>
-                            <Typography variant="h5">Borrowed Books</Typography>
+                            <Typography variant="h5">Libros prestados</Typography>
                         </div>
                         {borrowedBook.length > 0 ? (
                             <>
@@ -180,10 +181,9 @@ export const BooksList = () => {
                                         <Table stickyHeader>
                                             <TableHead>
                                                 <TableRow>
-                                                    <TableCell>Name</TableCell>
-                                                    <TableCell align="right">ISBN</TableCell>
-                                                    <TableCell>Category</TableCell>
-                                                    <TableCell align="right">Price</TableCell>
+                                                    <TableCell>Nombre</TableCell>
+                                                    <TableCell align="right">Codigo</TableCell>
+                                                    <TableCell>Categoria</TableCell>
                                                     <TableCell></TableCell>
                                                 </TableRow>
                                             </TableHead>
@@ -195,7 +195,6 @@ export const BooksList = () => {
                                                         </TableCell>
                                                         <TableCell align="right">{book.isbn}</TableCell>
                                                         <TableCell>{book.category}</TableCell>
-                                                        <TableCell align="right">{`$${book.price}`}</TableCell>
                                                         <TableCell>
                                                             <div className={classes.actionsContainer}>
                                                                 <Button
@@ -216,7 +215,7 @@ export const BooksList = () => {
                                 </div>
                             </>
                         ) : (
-                            <Typography variant="h5">No books issued!</Typography>
+                            <Typography variant="h5">No hay libros publicados</Typography>
                         )}
                     </>
                 )

@@ -100,7 +100,7 @@ export const Book = () => {
                         }}
                         centered
                     >
-                        <Tab label="Book Details" tabIndex={0} />
+                        <Tab label="Libro" tabIndex={0} />
                     </Tabs>
 
                     <TabPanel value={openTab} index={0}>
@@ -180,14 +180,14 @@ export const Book = () => {
                                         onClick={borrowBook}
                                         disabled={book && user && book.borrowedBy.includes(user._id)}
                                     >
-                                        Borrow
+                                        Prestar
                                     </Button>
                                     <Button
                                         variant="contained"
                                         onClick={returnBook}
                                         disabled={book && user && !book.borrowedBy.includes(user._id)}
                                     >
-                                        Return
+                                        Devolver
                                     </Button>
                                 </>
                             )}
