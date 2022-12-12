@@ -59,10 +59,10 @@ export const BooksList = () => {
     return (
         <>
             <div className={`${classes.pageHeader} ${classes.mb2}`}>
-                <Typography variant="h5">Book List</Typography>
+                <Typography variant="h5">Lista de libros</Typography>
                 {isAdmin && (
                     <Button variant="contained" color="primary" component={RouterLink} to="/admin/books/add">
-                        Add Book
+                        Añadir libro
                     </Button>
                 )}
             </div>
@@ -73,13 +73,12 @@ export const BooksList = () => {
                             <Table stickyHeader>
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Name</TableCell>
-                                        <TableCell align="right">ISBN</TableCell>
-                                        <TableCell>Category</TableCell>
-                                        <TableCell align="right">Quantity</TableCell>
-                                        <TableCell align="right">Available</TableCell>
-                                        <TableCell align="right">Price</TableCell>
-                                        <TableCell>Action</TableCell>
+                                        <TableCell>Nombre</TableCell>
+                                        <TableCell align="right">Codigo</TableCell>
+                                        <TableCell>Categoria</TableCell>
+                                        <TableCell align="right">Cantidad</TableCell>
+                                        <TableCell align="right">Disponibles</TableCell>
+                                        <TableCell align="center">Acciones</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -95,7 +94,6 @@ export const BooksList = () => {
                                             <TableCell>{book.category}</TableCell>
                                             <TableCell align="right">{book.quantity}</TableCell>
                                             <TableCell align="right">{book.availableQuantity}</TableCell>
-                                            <TableCell align="right">{`$${book.price}`}</TableCell>
                                             <TableCell>
                                                 <div className={classes.actionsContainer}>
                                                     <Button
@@ -104,7 +102,7 @@ export const BooksList = () => {
                                                         size="small"
                                                         to={`/books/${book.isbn}`}
                                                     >
-                                                        View
+                                                        Ver
                                                     </Button>
                                                     {isAdmin && (
                                                         <>
@@ -115,7 +113,7 @@ export const BooksList = () => {
                                                                 size="small"
                                                                 to={`/admin/books/${book.isbn}/edit`}
                                                             >
-                                                                Edit
+                                                                Editar
                                                             </Button>
                                                             <Button
                                                                 variant="contained"
@@ -126,7 +124,7 @@ export const BooksList = () => {
                                                                     setOpenModal(true)
                                                                 }}
                                                             >
-                                                                Delete
+                                                                Eliminar
                                                             </Button>
                                                         </>
                                                     )}
@@ -151,14 +149,14 @@ export const BooksList = () => {
                         <Modal open={openModal} onClose={(e) => setOpenModal(false)}>
                             <Card className={classes.conf_modal}>
                                 <CardContent>
-                                    <h2>Are you sure?</h2>
+                                    <h2>Esta seguro?</h2>
                                 </CardContent>
                                 <CardActions className={classes.conf_modal_actions}>
                                     <Button variant="contained" onClick={() => setOpenModal(false)}>
-                                        Cancel
+                                        Cancelar
                                     </Button>
                                     <Button variant="contained" color="secondary" onClick={deleteBook}>
-                                        Delete
+                                        Eliminar
                                     </Button>
                                 </CardActions>
                             </Card>
@@ -206,7 +204,7 @@ export const BooksList = () => {
                                                                     size="small"
                                                                     to={`/books/${book.isbn}`}
                                                                 >
-                                                                    View
+                                                                    Ver
                                                                 </Button>
                                                             </div>
                                                         </TableCell>

@@ -7,7 +7,7 @@ export const WithLoginProtector = ({ children }) => {
     if (user) {
         return children
     } else {
-        NotificationManager.error('Please login to proceed!')
+        NotificationManager.error('Por favor ingresa con tu usuario para seguir')
     }
     return <Navigate to="/" replace />
 }

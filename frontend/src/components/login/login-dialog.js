@@ -36,13 +36,13 @@ export const LoginDialog = ({ open, handleClose, handleSubmit }) => {
             onClose={handleClose}
             onKeyDown={handleEnterKeyDown}
         >
-            <DialogTitle>Login</DialogTitle>
+            <DialogTitle>Ingresar</DialogTitle>
             <DialogContent>
                 <TextField
                     autoFocus
                     margin="dense"
                     id="username"
-                    label="Username"
+                    label="Usuario"
                     type="text"
                     fullWidth
                     variant="standard"
@@ -52,7 +52,7 @@ export const LoginDialog = ({ open, handleClose, handleSubmit }) => {
                 <TextField
                     margin="dense"
                     id="password"
-                    label="Password"
+                    label="Contraseña"
                     type="password"
                     fullWidth
                     variant="standard"
@@ -62,10 +62,10 @@ export const LoginDialog = ({ open, handleClose, handleSubmit }) => {
             </DialogContent>
             <DialogActions>
                 <Button variant="text" onClick={handleClose}>
-                    Cancel
+                    Cancelar
                 </Button>
                 <Button variant="contained" type="submit" onClick={onSubmit}>
-                    Submit
+                    Enviar
                 </Button>
             </DialogActions>
         </Dialog>

@@ -80,7 +80,7 @@ export const Book = () => {
         book && (
             <div className={classes.wrapper}>
                 <Typography variant="h5" align="center" style={{ marginBottom: 20 }}>
-                    Book Details
+                    Detalles libro
                 </Typography>
                 <Card>
                     <Tabs
@@ -101,8 +101,6 @@ export const Book = () => {
                         centered
                     >
                         <Tab label="Book Details" tabIndex={0} />
-                        <Tab label="Price History" tabIndex={1} />
-                        <Tab label="Quantity History" tabIndex={2} />
                     </Tabs>
 
                     <TabPanel value={openTab} index={0}>
@@ -111,39 +109,33 @@ export const Book = () => {
                                 <TableBody>
                                     <TableRow>
                                         <TableCell variant="head" component="th" width="200">
-                                            Name
+                                            Nombre
                                         </TableCell>
                                         <TableCell>{book.name}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell variant="head" component="th">
-                                            ISBN
+                                            Codigo
                                         </TableCell>
                                         <TableCell>{book.isbn}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell variant="head" component="th">
-                                            Category
+                                            Categoria
                                         </TableCell>
                                         <TableCell>{book.category}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell variant="head" component="th">
-                                            Quantity
+                                            Cantidad
                                         </TableCell>
                                         <TableCell>{book.quantity}</TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell variant="head" component="th">
-                                            Available
+                                            Disponibles
                                         </TableCell>
                                         <TableCell>{book.availableQuantity}</TableCell>
-                                    </TableRow>
-                                    <TableRow>
-                                        <TableCell variant="head" component="th">
-                                            Price
-                                        </TableCell>
-                                        <TableCell>${book.price}</TableCell>
                                     </TableRow>
                                 </TableBody>
                             </Table>
@@ -179,7 +171,7 @@ export const Book = () => {
                                     component={RouterLink}
                                     to={`/admin/books/${bookIsbn}/edit`}
                                 >
-                                    Edit Book
+                                    Editar libro
                                 </Button>
                             ) : (
                                 <>
@@ -200,7 +192,7 @@ export const Book = () => {
                                 </>
                             )}
                             <Button type="submit" variant="text" color="primary" onClick={() => navigate(-1)}>
-                                Go Back
+                                Atrás
                             </Button>
                         </div>
                     </CardActions>

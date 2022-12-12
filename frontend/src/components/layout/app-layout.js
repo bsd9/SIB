@@ -81,7 +81,7 @@ export const AppLayout = () => {
                                     color: "white",
                                 }}
                             >
-                                Library Management System
+                                Sistema de información de bibliotecas
                             </Typography>
                         </Link>
                         <Box
@@ -113,10 +113,10 @@ export const AppLayout = () => {
                                         onClose={handleCloseUserMenu}
                                     >
                                         <MenuItem onClick={handleCloseUserMenu}>
-                                            <Typography textAlign="center">Dashboard</Typography>
+                                            <Typography textAlign="center">Tablero</Typography>
                                         </MenuItem>
                                         <MenuItem onClick={handleLogout}>
-                                            <Typography textAlign="center">Logout</Typography>
+                                            <Typography textAlign="center">Salir</Typography>
                                         </MenuItem>
                                     </Menu>
                                 </>
@@ -127,7 +127,7 @@ export const AppLayout = () => {
                                     }}
                                     sx={{ my: 2, color: "white", display: "block" }}
                                 >
-                                    Login
+                                    Ingresar
                                 </Button>
                             )}
                         </Box>

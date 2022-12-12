@@ -122,13 +122,13 @@ export const BookForm = () => {
         <>
             <Container component={Paper} className={classes.wrapper}>
                 <Typography className={classes.pageHeader} variant="h5">
-                    {bookIsbn ? "Update Book" : "Add Book"}
+                    {bookIsbn ? "Actualizar libro" : "Añadir libro"}
                 </Typography>
                 <form noValidate autoComplete="off" onSubmit={formSubmit}>
                     <FormGroup>
                         <FormControl className={classes.mb2}>
                             <TextField
-                                label="Name"
+                                label="Nombre"
                                 name="name"
                                 required
                                 value={book.name}
@@ -140,7 +140,7 @@ export const BookForm = () => {
                         </FormControl>
                         <FormControl className={classes.mb2}>
                             <TextField
-                                label="ISBN"
+                                label="codigo"
                                 name="isbn"
                                 required
                                 value={book.isbn}
@@ -151,41 +151,29 @@ export const BookForm = () => {
                             />
                         </FormControl>
                         <FormControl className={classes.mb2}>
-                            <InputLabel>Category</InputLabel>
+                            <InputLabel>Categoria</InputLabel>
                             <Select name="category" value={book.category} onChange={updateBookField} required>
-                                <MenuItem value="Sci-Fi">Sci-Fi</MenuItem>
-                                <MenuItem value="Action">Action</MenuItem>
-                                <MenuItem value="Adventure">Adventure</MenuItem>
+                                <MenuItem value="Ciencia Ficcion">Ciencia Ficcion</MenuItem>
+                                <MenuItem value="Accion">Accion</MenuItem>
+                                <MenuItem value="Aventura">Aventura</MenuItem>
                                 <MenuItem value="Horror">Horror</MenuItem>
                                 <MenuItem value="Romance">Romance</MenuItem>
-                                <MenuItem value="Mystery">Mystery</MenuItem>
+                                <MenuItem value="Misterio">Misterio</MenuItem>
                                 <MenuItem value="Thriller">Thriller</MenuItem>
                                 <MenuItem value="Drama">Drama</MenuItem>
-                                <MenuItem value="Fantasy">Fantasy</MenuItem>
-                                <MenuItem value="Comedy">Comedy</MenuItem>
-                                <MenuItem value="Biography">Biography</MenuItem>
-                                <MenuItem value="History">History</MenuItem>
-                                <MenuItem value="Western">Western</MenuItem>
-                                <MenuItem value="Literature">Literature</MenuItem>
-                                <MenuItem value="Poetry">Poetry</MenuItem>
-                                <MenuItem value="Philosophy">Philosophy</MenuItem>
+                                <MenuItem value="Fantasia">Fantasia</MenuItem>
+                                <MenuItem value="Comedia">Comedia</MenuItem>
+                                <MenuItem value="Biografia">Biografia</MenuItem>
+                                <MenuItem value="Historia">Historia</MenuItem>
+                                <MenuItem value="Occidental">Occidental</MenuItem>
+                                <MenuItem value="Literatura">Literatura</MenuItem>
+                                <MenuItem value="Poesia">Poesia</MenuItem>
+                                <MenuItem value="Filosofia">Filosofia</MenuItem>
                             </Select>
                         </FormControl>
                         <FormControl className={classes.mb2}>
                             <TextField
-                                label="Price"
-                                name="price"
-                                required
-                                value={book.price}
-                                onChange={updateBookField}
-                                onBlur={validateForm}
-                                error={errors.price.length > 0}
-                                helperText={errors.price}
-                            />
-                        </FormControl>
-                        <FormControl className={classes.mb2}>
-                            <TextField
-                                label="Quantity"
+                                label="Cantidad"
                                 name="quantity"
                                 type="number"
                                 value={book.quantity}
@@ -204,10 +192,10 @@ export const BookForm = () => {
                                 navigate(-1)
                             }}
                         >
-                            Cancel
+                            Cancelar
                         </Button>
                         <Button type="submit" variant="contained" color="primary" disabled={isInvalid}>
-                            {bookIsbn ? "Update Book" : "Add Book"}
+                            {bookIsbn ? "Actualizar libro" : "Añadir libro"}
                         </Button>
                     </div>
                 </form>
